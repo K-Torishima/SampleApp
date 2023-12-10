@@ -33,10 +33,19 @@ let package = Package(
         // アプリケーション本体の実装のRootになるものとかをここに実装すると良い、例えばAppDelegateとか　Appとか
         // dependenciesに依存させたいものを記載、基本的にそこで使うものを依存させる。
         .target(
+            name: "Common",
+            swiftSettings: swiftSettings
+        ),
+        .target(
+            name: "Domain",
+            swiftSettings: swiftSettings
+        ),
+        .target(
             name: "AppMain",
             dependencies: [
                 "View"
-            ]
+            ],
+            swiftSettings: swiftSettings
         ),
         .target(
             name: "View",

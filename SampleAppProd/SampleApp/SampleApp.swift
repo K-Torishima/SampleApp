@@ -8,9 +8,11 @@ struct SampleApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+    let appRoot = SampleAppRoot()
+    
     var body: some Scene {
         WindowGroup {
-            Root()
+            appRoot.build
         }
     }
 }

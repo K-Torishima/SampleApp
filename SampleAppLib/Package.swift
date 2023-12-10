@@ -41,15 +41,35 @@ let package = Package(
             swiftSettings: swiftSettings
         ),
         .target(
+            name: "Redux",
+            swiftSettings: swiftSettings
+        ),
+        .target(
             name: "AppMain",
             dependencies: [
+                "Redux",
+                "Features",
                 "View"
             ],
             swiftSettings: swiftSettings
         ),
         .target(
+            name: "Features",
+            dependencies: [
+                "Common",
+                "Domain",
+                "Redux"
+            ],
+            swiftSettings: swiftSettings
+        ),
+        .target(
             name: "View",
-            dependencies: [],
+            dependencies: [
+                "Common",
+                "Domain",
+                "Redux",
+                "Features"
+            ],
             swiftSettings: swiftSettings,
             plugins: [
                 // .plugin(name: "SwiftGenPlugin", package: "SwiftGenPlugin"),

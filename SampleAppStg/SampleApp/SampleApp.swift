@@ -10,7 +10,7 @@ struct SampleAppStgApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Root()
+            SampleAppRoot()
         }
     }
 }
